@@ -1,5 +1,6 @@
 package com.mt.RNKeyValueStorage;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.facebook.react.bridge.Promise;
@@ -29,19 +30,15 @@ public class KeyValueStorageModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void get(String key, Promise promise) {
         try {
-            String value = get(key);
+            ReactApplicationContext context = getReactApplicationContext();
+            String value = get(key, context);
             promise.resolve(value);
         } catch (Throwable e) {
             promise.reject(e.toString());
         }
     }
 
-    public String get(String key) throws Exception {
-        if(key.isEmpty()) {
-            throw new Exception("No key field specified");
-        }
-
-        ReactApplicationContext context = getReactApplicationContext();
+    static public String get(String key, Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
         return sharedPreferences.getString(key, null);
     }
@@ -49,19 +46,15 @@ public class KeyValueStorageModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void set(String key, String value, Promise promise) {
         try {
-            set(key, value);
+            ReactApplicationContext context = getReactApplicationContext();
+            set(key, value, context);
             promise.resolve(true);
         } catch (Throwable e) {
             promise.reject(e.toString());
         }
     }
 
-    public void set(String key, String value) throws Exception {
-        if(key.isEmpty()) {
-            throw new Exception("No key field specified");
-        }
-
-        ReactApplicationContext context = getReactApplicationContext();
+    static public void set(String key, String value, Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key, value).apply();
@@ -70,19 +63,15 @@ public class KeyValueStorageModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void remove(String key, Promise promise) {
         try {
-            remove(key);
+            ReactApplicationContext context = getReactApplicationContext();
+            remove(key, context);
             promise.resolve(true);
         } catch (Throwable e) {
             promise.reject(e.toString());
         }
     }
 
-    public void remove(String key) throws Exception {
-        if(key.isEmpty()) {
-            throw new Exception("No key field specified");
-        }
-
-        ReactApplicationContext context = getReactApplicationContext();
+    static public void remove(String key, Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove(key).apply();
