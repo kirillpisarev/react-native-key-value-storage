@@ -6,6 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirillpisarev/react-native-key-value-storage.git"
+  },
+  "keywords": [
+    "react-native",
+    "store",
+    "storage",
+    "SharedPreferences",
+    "UserDefaults"
+  ],
+  "bugs": {
+    "url": "https://github.com/kirillpisarev/react-native-key-value-storage/issues"
+  },
+  "homepage": "https://github.com/kirillpisarev/react-native-key-value-storage#readme",
   "author": "Kirill Pisarev",
   "license": "ISC"
 }
