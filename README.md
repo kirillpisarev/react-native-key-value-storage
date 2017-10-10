@@ -38,6 +38,10 @@ KeyValueStorage.get("key")
 
 ```
 
+### Dependency
+
+- Use version `2.x.x` for RN `>= 0.47.0`
+- Use version `1.x.x` for RN `< 0.47.0`
 
 ### Methods
 
