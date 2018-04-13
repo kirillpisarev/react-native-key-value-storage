@@ -10,6 +10,11 @@
 
 @interface RCT_EXTERN_MODULE(KeyValueStorage, NSObject)
 
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
+
 RCT_EXTERN_METHOD(get:(id *) key
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject
