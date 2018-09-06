@@ -14,15 +14,17 @@ Note: currently support only String values, to store other types use JSON repres
 ##### JS
 
 ``` js
-import KeyValueStorage from 'react-native-key-value-storage'
+import KeyValueStorage from "react-native-key-value-storage"
 
-try {
-	await KeyValueStorage.set("key", "value")
-	const stored = await KeyValueStorage.get("key") // "value"
-	await KeyValueStorage.remove("key")
-} catch(error) {
-	// Handle error
-}
+(async () => {
+	try {
+		await KeyValueStorage.set("key", "value")
+		const stored = await KeyValueStorage.get("key") // "value"
+		await KeyValueStorage.remove("key")
+	} catch(error) {
+		// Handle error
+	}
+})()
 
 ```
 #### Java
