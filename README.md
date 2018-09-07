@@ -7,7 +7,7 @@ Apparent use case is to share settings between js part and long running tasks wr
 Library is built upon [SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html) on Android and on [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults) on iOS.
 
 
-Note: currently support only String values, to store other types use JSON representation of your data
+Note: currently supports only string values. To store other types use the JSON representation.
 
 ### Usage
 
