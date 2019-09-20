@@ -1,6 +1,6 @@
 {
   "name": "react-native-key-value-storage",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "description": "Provides an easy way to persistently store small chunks of data and then access it from the native code.",
   "main": "index.js",
   "scripts": {
